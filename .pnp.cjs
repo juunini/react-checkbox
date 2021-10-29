@@ -70,6 +70,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jsx-a11y", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:6.4.1"],
             ["eslint-plugin-react", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:7.26.1"],
             ["eslint-plugin-react-hooks", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:4.2.0"],
+            ["husky", "npm:7.0.4"],
             ["jest", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:27.3.1"],
             ["jest-plugin-context", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:2.9.0"],
             ["parcel", "npm:2.0.0"],
@@ -14829,6 +14830,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["husky", [
+        ["npm:7.0.4", {
+          "packageLocation": "./.yarn/cache/husky-npm-7.0.4-917ba035c6-c6ec4af63d.zip/node_modules/husky/",
+          "packageDependencies": [
+            ["husky", "npm:7.0.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["iconv-lite", [
         ["npm:0.4.24", {
           "packageLocation": "./.yarn/cache/iconv-lite-npm-0.4.24-c5c4ac6695-bd9f120f5a.zip/node_modules/iconv-lite/",
@@ -20657,6 +20667,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-jsx-a11y", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:6.4.1"],
             ["eslint-plugin-react", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:7.26.1"],
             ["eslint-plugin-react-hooks", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:4.2.0"],
+            ["husky", "npm:7.0.4"],
             ["jest", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:27.3.1"],
             ["jest-plugin-context", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:2.9.0"],
             ["parcel", "npm:2.0.0"],
