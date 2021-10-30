@@ -8,3 +8,13 @@
 # Documentation here: https://yarnpkg.com/features/zero-installs
 !/.yarn/cache
 #/.pnp.*
+
+/node_modules
+/.parcel-cache
+/dist
+/coverage
+**/__snapshots__
+
+**/.DS_Store
+**/.idea
+/package.tgz
