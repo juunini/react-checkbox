@@ -2,7 +2,7 @@
   "author": "juunini",
   "name": "react-checkbox",
   "description": "CheckBox and Radio component library for React",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "homepage": "https://github.com/juunini/react-checkbox",
   "keywords": [
@@ -27,5 +27,13 @@
       "optimize": true
     }
   },
-  "scripts": {}
+  "scripts": {
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
+  },
+  "devDependencies": {
+    "husky": "^7.0.0",
+    "pinst": "^2.0.0"
+  }
 }
