@@ -5,7 +5,7 @@ import CheckBox from '.';
 
 <Meta title="react-checkbox" />
 
-export const Template = (args) => {
+export const CustomTemplate = (args) => {
   const [checked, setChecked] = useState(false);
   return (
     <CheckBox
@@ -15,6 +15,20 @@ export const Template = (args) => {
     />
   );
 };
+const RadioTemplate = (args) => {
+  const [checked1, setChecked1] = useState(false);
+  const [checked2, setChecked2] = useState(false);
+  const [checked3, setChecked3] = useState(false);
+  const [checked4, setChecked4] = useState(false);
+  return (
+    <>
+      <CheckBox {...args} checked={checked1} onChange={setChecked1}>{args.children}1</CheckBox>
+      <CheckBox {...args} checked={checked2} onChange={setChecked2}>{args.children}2</CheckBox>
+      <CheckBox {...args} checked={checked3} onChange={setChecked3}>{args.children}3</CheckBox>
+      <CheckBox {...args} checked={checked4} onChange={setChecked4}>{args.children}4</CheckBox>
+    </>
+  );
+};
 const control = {
   radio: { control: { type: 'radio' } },
   text: { control: { type: 'text' } },
@@ -22,17 +36,37 @@ const control = {
   range: { control: { type: 'range', min: 0, max: 100, step: 1 } },
 };
 const options = {
+  type: { options: ['checkbox', 'radio'] },
   borderStyle: { options: ['none', 'hidden', 'solid', 'dotted', 'dashed', 'double', 'groove', 'ridge', 'inset', 'outset'] },
   checkboxPosition: { options: ['before', 'after'] },
+};
+const argTypes = {
+  marginRight: { ...control.range },
+  marginLeft: { ...control.range },
+  fontSize: { ...control.range },
+  width: { ...control.range },
+  height: { ...control.range },
+  checkboxMarginRight: { ...control.range },
+  checkboxMarginLeft: { ...control.range },
+  borderWidth: { ...control.range },
+  borderStyle: { ...control.radio, ...options.borderStyle },
+  borderColor: { ...control.color },
+  borderRadius: { ...control.range },
+  checkboxPosition: { ...control.radio, ...options.checkboxPosition },
+  checkedBackgroundColor: { ...control.color },
+  checkedContent: { ...control.text },
+  checkedImage: { ...control.text },
+  checkedImageSize: { ...control.text },
 };
 
 <Canvas>
   <Story
-    name="CheckBox"
+    name="custom"
     args={{
       marginRight: 0,
       marginLeft: 0,
       fontSize: 16,
+      type: 'checkbox',
       children: 'label',
       width: 16,
       height: 16,
@@ -44,24 +78,35 @@ const options = {
       checkboxPosition: 'before',
     }}
     argTypes={{
-      marginRight: { ...control.range },
-      marginLeft: { ...control.range },
-      fontSize: { ...control.range },
-      width: { ...control.range },
-      height: { ...control.range },
-      checkboxMarginRight: { ...control.range },
-      checkboxMarginLeft: { ...control.range },
-      borderWidth: { ...control.range },
-      borderStyle: { ...control.radio, ...options.borderStyle },
-      borderColor: { ...control.color },
-      borderRadius: { ...control.range },
-      checkboxPosition: { ...control.radio, ...options.checkboxPosition },
-      checkedBackgroundColor: { ...control.color },
-      checkedContent: { ...control.text },
-      checkedImage: { ...control.text },
-      checkedImageSize: { ...control.text },
+      ...argTypes,
+      type: { ...control.radio, ...options.type },
     }}
   >
-    {Template.bind({})}
+    {CustomTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="radio"
+    args={{
+      marginRight: 20,
+      marginLeft: 20,
+      fontSize: 16,
+      type: 'radio',
+      name: 'radio',
+      children: 'radio',
+      width: 16,
+      height: 16,
+      checkboxMarginRight: 10,
+      checkboxMarginLeft: 10,
+      borderWidth: 1,
+      borderStyle: 'solid',
+      borderRadius: 100,
+      checkboxPosition: 'before',
+    }}
+    argTypes={argTypes}
+  >
+    {RadioTemplate.bind({})}
   </Story>
 </Canvas>
