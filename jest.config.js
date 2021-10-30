@@ -5,8 +5,6 @@ module.exports = {
     '!**/*.d.ts',
     '!**/node_modules/**',
     '!**/.yarn/**',
-    '!**/.next/**',
-    '!**/cypress',
   ],
   testMatch: [
     '<rootDir>/src/**/?(*.)+(spec|test).[jt]s?(x)',
@@ -45,7 +43,7 @@ module.exports = {
     '/dist/',
     '.storybook',
 
-    '/__snapshots__/'
+    '/__snapshots__/',
   ],
   coveragePathIgnorePatterns: [
     '/node_modules/',
@@ -57,7 +55,7 @@ module.exports = {
     '.interfaces.',
     '.types.',
     '.stories.',
-    '/__snapshots__/'
+    '/__snapshots__/',
   ],
   coverageThreshold: {
     global: {
@@ -67,4 +65,4 @@ module.exports = {
       statements: 100,
     },
   },
-}
+};
