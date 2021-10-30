@@ -1,15 +1,14 @@
 module.exports = {
   testEnvironment: 'jsdom',
   collectCoverageFrom: [
-    '**/*.{js,jsx,ts,tsx}',
+    '**/*.{ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
     '!**/.yarn/**',
-    '!**/.next/**',
-    '!**/cypress',
+    '!**/dist/**',
   ],
   testMatch: [
-    '<rootDir>/src/**/?(*.)+(spec|test).[jt]s?(x)',
+    '**/?(*.)+(spec|test).ts?(x)',
   ],
   moduleNameMapper: {
     // Handle CSS imports (without CSS modules)
@@ -45,7 +44,7 @@ module.exports = {
     '/dist/',
     '.storybook',
 
-    '/__snapshots__/'
+    '/__snapshots__/',
   ],
   coveragePathIgnorePatterns: [
     '/node_modules/',
@@ -57,7 +56,7 @@ module.exports = {
     '.interfaces.',
     '.types.',
     '.stories.',
-    '/__snapshots__/'
+    '/__snapshots__/',
   ],
   coverageThreshold: {
     global: {
@@ -67,4 +66,4 @@ module.exports = {
       statements: 100,
     },
   },
-}
+};
