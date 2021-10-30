@@ -19,8 +19,5 @@ const HiddenRealCheckBox = styled.input(({
   background: 'none',
   appearance: 'none',
 }));
-HiddenRealCheckBox.defaultProps = {
-  type: 'checkbox',
-};
 
 export default HiddenRealCheckBox;

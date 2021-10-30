@@ -13,6 +13,7 @@ export default function CheckBox({
   id = randomID(),
   name,
   children,
+  type = 'checkbox',
   checked,
   onChange,
   // VisibleFakeCheckbox
@@ -40,6 +41,7 @@ export default function CheckBox({
       <HiddenRealCheckBox
         id={id}
         name={name}
+        type={type}
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
         width={width}
