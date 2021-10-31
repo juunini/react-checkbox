@@ -13,8 +13,9 @@ export interface Props {
   location?: CheckBoxLocation;
   children?: React.ReactNode;
   labelStyle?: React.CSSProperties;
-  checkboxStyle?: React.CSSProperties;
-  checkboxCheckedStyle?: React.CSSProperties;
+  switchStyle?: React.CSSProperties;
+  switchInnerStyle?: React.CSSProperties;
+  switchInnerCheckedStyle?: React.CSSProperties;
 }
 
 export default function Switch({
@@ -26,8 +27,9 @@ export default function Switch({
   location = 'before',
   children,
   labelStyle,
-  checkboxStyle,
-  checkboxCheckedStyle,
+  switchStyle,
+  switchInnerStyle,
+  switchInnerCheckedStyle,
 }: Props): JSX.Element {
   return (
     <Label
@@ -41,13 +43,15 @@ export default function Switch({
         name={name}
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
+        checkboxStyle={switchStyle}
       />
+      { location === 'after' && children }
       <FakeSwitch
-        location={location}
-        checkboxStyle={checkboxStyle}
-        checkboxCheckedStyle={checkboxCheckedStyle}
+        switchStyle={switchStyle}
+        switchInnerStyle={switchInnerStyle}
+        switchInnerCheckedStyle={switchInnerCheckedStyle}
       />
-      {children}
+      { location === 'before' && children }
     </Label>
   );
 }

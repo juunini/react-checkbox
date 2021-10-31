@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 
-import type { CheckBoxLocation } from './CheckBox.types';
-
-const SWITCH_CASE: React.CSSProperties = {
+const SWITCH: React.CSSProperties = {
   boxSizing: 'border-box',
   position: 'relative',
   display: 'flex',
@@ -18,11 +16,11 @@ const SWITCH_CASE: React.CSSProperties = {
   boxShadow: 'inset 1px 5px 1px #999999',
   transition: '0.5s',
 };
-const SWITCH_CASE_CHECKED: React.CSSProperties = {
+const SWITCH_CHECKED: React.CSSProperties = {
   backgroundColor: '#F2D522',
   boxShadow: 'inset 1px 5px 1px #E3AE56',
 };
-const CHECKBOX_STYLE: React.CSSProperties = {
+const SWITCH_INNER_STYLE: React.CSSProperties = {
   boxSizing: 'border-box',
   content: '""',
   position: 'absolute',
@@ -39,38 +37,39 @@ const CHECKBOX_STYLE: React.CSSProperties = {
   borderRadius: '50%',
   transition: '0.5s',
 };
-const CHECKBOX_CHECKED_STYLE: React.CSSProperties = {
+const SWITCH_INNER_CHECKED_STYLE: React.CSSProperties = {
   transform: 'translateX(26px)',
 };
 
 export interface Props {
-  location: CheckBoxLocation;
-  divStyle?: React.CSSProperties;
-  checkboxStyle?: React.CSSProperties;
-  checkboxCheckedStyle?: React.CSSProperties;
+  switchStyle?: React.CSSProperties;
+  switchCheckedStyle?: React.CSSProperties;
+  switchInnerStyle?: React.CSSProperties;
+  switchInnerCheckedStyle?: React.CSSProperties;
 }
 
 const FakeSwitch = styled.div(({
-  location,
-  divStyle,
-  checkboxStyle,
-  checkboxCheckedStyle,
+  switchStyle,
+  switchCheckedStyle,
+  switchInnerStyle,
+  switchInnerCheckedStyle,
 }: Props) => ({
-  ...SWITCH_CASE,
-  ...divStyle,
+  ...SWITCH,
+  ...switchStyle,
 
   'input:checked ~ &': {
-    ...SWITCH_CASE_CHECKED,
+    ...SWITCH_CHECKED,
+    ...switchCheckedStyle,
   },
 
-  [`&::${location}`]: {
-    ...CHECKBOX_STYLE,
-    ...checkboxStyle,
+  '&::before': {
+    ...SWITCH_INNER_STYLE,
+    ...switchInnerStyle,
   },
 
-  [`input:checked ~ &::${location}`]: {
-    ...CHECKBOX_CHECKED_STYLE,
-    ...checkboxCheckedStyle,
+  'input:checked ~ &::before': {
+    ...SWITCH_INNER_CHECKED_STYLE,
+    ...switchInnerCheckedStyle,
   },
 }));
 

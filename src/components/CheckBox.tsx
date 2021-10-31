@@ -15,6 +15,8 @@ export interface Props {
   labelStyle?: React.CSSProperties;
   checkboxStyle?: React.CSSProperties;
   checkboxCheckedStyle?: React.CSSProperties;
+  checkboxInnerStyle?: React.CSSProperties;
+  checkboxInnerCheckedStyle?: React.CSSProperties;
 }
 
 export default function CheckBox({
@@ -28,6 +30,8 @@ export default function CheckBox({
   labelStyle,
   checkboxStyle,
   checkboxCheckedStyle,
+  checkboxInnerStyle,
+  checkboxInnerCheckedStyle,
 }: Props): JSX.Element {
   return (
     <Label
@@ -42,13 +46,15 @@ export default function CheckBox({
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
       />
+      { location === 'after' && children }
       <FakeCheckBox
         type={type}
-        location={location}
         checkboxStyle={checkboxStyle}
         checkboxCheckedStyle={checkboxCheckedStyle}
+        checkboxInnerStyle={checkboxInnerStyle}
+        checkboxInnerCheckedStyle={checkboxInnerCheckedStyle}
       />
-      {children}
+      { location === 'before' && children }
     </Label>
   );
 }

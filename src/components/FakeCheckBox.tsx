@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import type { CheckBoxLocation, CheckBoxType } from './CheckBox.types';
+import type { CheckBoxType } from './CheckBox.types';
 
-const DIV_STYLE: React.CSSProperties = {
+const CHECKBOX_STYLE: React.CSSProperties = {
   boxSizing: 'border-box',
   display: 'flex',
   flexDirection: 'row',
@@ -11,7 +11,8 @@ const DIV_STYLE: React.CSSProperties = {
   margin: 0,
   padding: 0,
 };
-const CHECKBOX_STYLE: React.CSSProperties = {
+const CHECKBOX_CHECKED_STYLE: React.CSSProperties = {};
+const CHECKBOX_INNER_STYLE: React.CSSProperties = {
   boxSizing: 'border-box',
   content: '""',
   display: 'flex',
@@ -26,37 +27,42 @@ const CHECKBOX_STYLE: React.CSSProperties = {
   border: '3px solid white',
   outline: '1px inset black',
 };
-const CHECKBOX_CHECKED_STYLE: React.CSSProperties = {
+const CHECKBOX_INNER_CHECKED_STYLE: React.CSSProperties = {
   backgroundColor: 'black',
 };
 
 export interface Props {
   type: CheckBoxType;
-  location: CheckBoxLocation;
-  divStyle?: React.CSSProperties;
   checkboxStyle?: React.CSSProperties;
   checkboxCheckedStyle?: React.CSSProperties;
+  checkboxInnerStyle?: React.CSSProperties;
+  checkboxInnerCheckedStyle?: React.CSSProperties;
 }
 
 const FakeCheckBox = styled.div(({
   type,
-  location,
-  divStyle,
   checkboxStyle,
   checkboxCheckedStyle,
+  checkboxInnerStyle,
+  checkboxInnerCheckedStyle,
 }: Props) => ({
-  ...DIV_STYLE,
-  ...divStyle,
+  ...CHECKBOX_STYLE,
+  ...checkboxStyle,
 
-  [`&::${location}`]: {
-    ...CHECKBOX_STYLE,
-    borderRadius: type === 'radio' ? '50%' : 0,
-    ...checkboxStyle,
-  },
-
-  [`input:checked ~ &::${location}`]: {
+  'input:checked ~ &': {
     ...CHECKBOX_CHECKED_STYLE,
     ...checkboxCheckedStyle,
+  },
+
+  '&::before': {
+    ...CHECKBOX_INNER_STYLE,
+    borderRadius: type === 'radio' ? '50%' : 0,
+    ...checkboxInnerStyle,
+  },
+
+  'input:checked ~ &::before': {
+    ...CHECKBOX_INNER_CHECKED_STYLE,
+    ...checkboxInnerCheckedStyle,
   },
 }));
 

@@ -16,7 +16,7 @@ describe('Switch component is', () => {
     it('Should be calls onChange', () => {
       renderSwitch({ onChange });
 
-      fireEvent.click(screen.getByRole('Switch'));
+      fireEvent.click(screen.getByRole('checkbox'));
 
       expect(onChange).toBeCalled();
     });
@@ -38,8 +38,8 @@ describe('Switch component is', () => {
     it('Should be "left" is 0 and no "right"', () => {
       renderSwitch({ location: givenLocation });
 
-      expect(screen.getByRole('Switch')).not.toHaveStyleRule('right', '0');
-      expect(screen.getByRole('Switch')).toHaveStyleRule('left', '0');
+      expect(screen.getByRole('checkbox')).not.toHaveStyleRule('right', '0');
+      expect(screen.getByRole('checkbox')).toHaveStyleRule('left', '0');
     });
   });
 
@@ -49,8 +49,8 @@ describe('Switch component is', () => {
     it('Should be no "left" and "right" is 0', () => {
       renderSwitch({ location: givenLocation });
 
-      expect(screen.getByRole('Switch')).toHaveStyleRule('right', '0');
-      expect(screen.getByRole('Switch')).not.toHaveStyleRule('left', '0');
+      expect(screen.getByRole('checkbox')).toHaveStyleRule('right', '0');
+      expect(screen.getByRole('checkbox')).not.toHaveStyleRule('left', '0');
     });
   });
 });
