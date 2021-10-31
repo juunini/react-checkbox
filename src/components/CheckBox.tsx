@@ -12,7 +12,8 @@ import {
 
 export interface Props {
   checked: boolean;
-  onChange: (checked: boolean) => void;
+  value?: string;
+  onChange: (value: string | boolean) => void;
   type?: CheckBoxType;
   id?: string;
   name?: string;
@@ -27,6 +28,7 @@ export interface Props {
 
 export default function CheckBox({
   checked,
+  value,
   onChange,
   type = 'checkbox',
   id = randomID(),
@@ -49,8 +51,9 @@ export default function CheckBox({
         location={location}
         id={id}
         name={name}
+        value={value}
         checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
+        onChange={(e) => onChange(type === 'checkbox' ? e.target.checked : e.target.value)}
         checkboxStyle={{
           ...CHECKBOX_STYLE,
           borderRadius: type === 'radio' ? '50%' : 0,

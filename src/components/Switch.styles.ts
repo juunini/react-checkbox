@@ -1,4 +1,4 @@
-export const SWITCH: React.CSSProperties = {
+export const SWITCH_STYLE: React.CSSProperties = {
   boxSizing: 'border-box',
   position: 'relative',
   display: 'flex',
@@ -15,7 +15,7 @@ export const SWITCH: React.CSSProperties = {
   transition: '0.5s',
 };
 
-export const SWITCH_CHECKED: React.CSSProperties = {
+export const SWITCH_CHECKED_STYLE: React.CSSProperties = {
   backgroundColor: '#F2D522',
   boxShadow: 'inset 1px 5px 1px #E3AE56',
 };

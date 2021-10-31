@@ -24,16 +24,13 @@ export const CheckBoxTemplate = (args) => {
 };
 
 export const RadioTemplate = (args) => {
-  const [checked1, setChecked1] = useState(false);
-  const [checked2, setChecked2] = useState(false);
-  const [checked3, setChecked3] = useState(false);
-  const [checked4, setChecked4] = useState(false);
+  const [value, setValue] = useState(false);
   return (
     <>
-      <CheckBox {...args} type="radio" name="radio" checked={checked1} onChange={setChecked1}>label1</CheckBox>
-      <CheckBox {...args} type="radio" name="radio" checked={checked2} onChange={setChecked2}>label2</CheckBox>
-      <CheckBox {...args} type="radio" name="radio" checked={checked3} onChange={setChecked3}>label3</CheckBox>
-      <CheckBox {...args} type="radio" name="radio" checked={checked4} onChange={setChecked4}>label4</CheckBox>
+      <CheckBox {...args} type="radio" name="radio" value="1" checked={value === '1'} onChange={setValue}>label1</CheckBox>
+      <CheckBox {...args} type="radio" name="radio" value="2" checked={value === '2'} onChange={setValue}>label2</CheckBox>
+      <CheckBox {...args} type="radio" name="radio" value="3" checked={value === '3'} onChange={setValue}>label3</CheckBox>
+      <CheckBox {...args} type="radio" name="radio" value="4" checked={value === '4'} onChange={setValue}>label4</CheckBox>
     </>
   );
 };

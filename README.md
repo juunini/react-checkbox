@@ -7,11 +7,11 @@
 
 ## Usage
 
-When you use basic appearance of checkbox or radio
+Using checkbox
 
 ```tsx
 import { useState } from 'react';
-import { CheckBox } from 'react-checkbox';
+import { CheckBox/* or Switch */ } from 'react-checkbox';
 
 function App(): JSX.Element {
   const [checked, setChecked] = useState<boolean>(false);
@@ -21,111 +21,40 @@ function App(): JSX.Element {
       checked={checked}
       onChange={setChecked}
     >
-      label text
+      checkbox
     </CheckBox>
   );
 }
 ```
 
-When you use switch appearance of checkbox or radio
+Using radio
 
 ```tsx
 import { useState } from 'react';
-import { Switch } from 'react-checkbox';
+import { CheckBox/* or Switch */ } from 'react-checkbox';
 
 function App(): JSX.Element {
-  const [checked, setChecked] = useState<boolean>(false);
+  const [value, setValue] = useState<string>('');
 
   return (
-    <Switch
-      checked={checked}
-      onChange={setChecked}
-    >
-      label text
-    </Switch>
+    <>
+      <CheckBox
+        type="radio"
+        value="1"
+        checked={value === '1'}
+        onChange={setValue}
+      >
+        radio1
+      </CheckBox>
+      <CheckBox
+        type="radio"
+        value="2"
+        checked={value === '2'}
+        onChange={setValue}
+      >
+        radio2
+      </CheckBox>
+    </>
   );
 }
 ```
-
-## Properties
-
-|name|type|default|
-|:-|:-|:-|
-|*checked|boolean||
-|*onChange|(checked: boolean) => void||
-|type|'checkbox' \| 'radio'|'checkbox'|
-|id|string|[randomID](./src/utils/randomID.ts)|
-|name|string|undefined|
-|location|'before' \| 'after'|'before'|
-|[labelStyle](#labelstyle-default-properties)|React.CSSProperties||
-|[checkboxStyle](#checkboxstyle-default-properties)|React.CSSProperties||
-|[checkboxInnerStyle](#checkboxinnerstyle-default-properties)|React.CSSProperties||
-|[checkboxInnerCheckedStyle](#checkboxinnercheckedstyle-default-properties)|React.CSSProperties||
-
-## labelStyle default properties
-
-```html
-<label>
-  <input />
-  { location === 'after' && children }
-  <div />
-  { location === 'before' && children }
-</label>
-```
-
-in label style.
-
-|name|default|
-|:-|:-|
-|boxSizing|border-box|
-|position|relative|
-|display|inline-flex|
-|flexDirection|row|
-|justifyContent|center|
-|alignItems|center|
-|margin|0|
-|padding|0|
-|verticalAlign|top|
-
-## checkboxStyle default properties
-
-`input ~ div` style.
-
-|name|default|
-|:-|:-|
-|boxSizing|border-box|
-|display|flex|
-|flexDirection|row|
-|justifyContent|center|
-|alignItems|center|
-|margin|0|
-|padding|0|
-
-## checkboxInnerStyle default properties
-
-This using in `input ~ div::before` pseudo class style.
-
-|name|default|
-|:-|:-|
-|boxSizing|border-box|
-|content|""|
-|display|flex|
-|justifyContent|center|
-|alignItems|center|
-|width|1rem|
-|height|1rem|
-|margin|0|
-|padding|0|
-|fontSize|1rem|
-|backgroundColor|white|
-|border|3px solid white|
-|borderRadius|type === radio ? 50% : 0|
-|outline|1px inset black|
-
-## checkboxInnerCheckedStyle default properties
-
-This using in `input:checked ~ div::before` pseudo class style.
-
-|name|default|
-|:-|:-|
-|backgroundColor|black|

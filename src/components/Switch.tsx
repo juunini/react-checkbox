@@ -4,15 +4,16 @@ import Label from './Label';
 import Input from './Input';
 import FakeSwitch from './FakeSwitch';
 import {
-  SWITCH,
-  SWITCH_CHECKED,
+  SWITCH_STYLE,
+  SWITCH_CHECKED_STYLE,
   SWITCH_INNER_STYLE,
   SWITCH_INNER_CHECKED_STYLE,
 } from './Switch.styles';
 
 export interface Props {
   checked: boolean;
-  onChange: (checked: boolean) => void;
+  value?: string;
+  onChange: (value: string | boolean) => void;
   type?: CheckBoxType;
   id?: string;
   name?: string;
@@ -27,6 +28,7 @@ export interface Props {
 
 export default function Switch({
   checked,
+  value,
   onChange,
   type = 'checkbox',
   id = randomID(),
@@ -49,14 +51,15 @@ export default function Switch({
         location={location}
         id={id}
         name={name}
+        value={value}
         checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
-        checkboxStyle={{ ...SWITCH, ...switchStyle }}
+        onChange={(e) => onChange(type === 'checkbox' ? e.target.checked : e.target.value)}
+        checkboxStyle={{ ...SWITCH_STYLE, ...switchStyle }}
       />
       { location === 'after' && children }
       <FakeSwitch
-        switchStyle={{ ...SWITCH, ...switchStyle }}
-        switchCheckedStyle={{ ...SWITCH_CHECKED, ...switchCheckedStyle }}
+        switchStyle={{ ...SWITCH_STYLE, ...switchStyle }}
+        switchCheckedStyle={{ ...SWITCH_CHECKED_STYLE, ...switchCheckedStyle }}
         switchInnerStyle={{ ...SWITCH_INNER_STYLE, ...switchInnerStyle }}
         switchInnerCheckedStyle={{ ...SWITCH_INNER_CHECKED_STYLE, ...switchInnerCheckedStyle }}
       />
