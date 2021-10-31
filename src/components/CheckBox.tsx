@@ -3,6 +3,12 @@ import randomID from '../utils/randomID';
 import Label from './Label';
 import Input from './Input';
 import FakeCheckBox from './FakeCheckBox';
+import {
+  CHECKBOX_STYLE,
+  CHECKBOX_CHECKED_STYLE,
+  CHECKBOX_INNER_STYLE,
+  CHECKBOX_INNER_CHECKED_STYLE,
+} from './CheckBox.styles';
 
 export interface Props {
   checked: boolean;
@@ -49,10 +55,13 @@ export default function CheckBox({
       { location === 'after' && children }
       <FakeCheckBox
         type={type}
-        checkboxStyle={checkboxStyle}
-        checkboxCheckedStyle={checkboxCheckedStyle}
-        checkboxInnerStyle={checkboxInnerStyle}
-        checkboxInnerCheckedStyle={checkboxInnerCheckedStyle}
+        checkboxStyle={{ ...CHECKBOX_STYLE, ...checkboxStyle }}
+        checkboxCheckedStyle={{ ...CHECKBOX_CHECKED_STYLE, ...checkboxCheckedStyle }}
+        checkboxInnerStyle={{ ...CHECKBOX_INNER_STYLE, ...checkboxInnerStyle }}
+        checkboxInnerCheckedStyle={{
+          ...CHECKBOX_INNER_CHECKED_STYLE,
+          ...checkboxInnerCheckedStyle,
+        }}
       />
       { location === 'before' && children }
     </Label>

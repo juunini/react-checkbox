@@ -3,6 +3,12 @@ import randomID from '../utils/randomID';
 import Label from './Label';
 import Input from './Input';
 import FakeSwitch from './FakeSwitch';
+import {
+  SWITCH,
+  SWITCH_CHECKED,
+  SWITCH_INNER_STYLE,
+  SWITCH_INNER_CHECKED_STYLE,
+} from './Switch.styles';
 
 export interface Props {
   checked: boolean;
@@ -14,6 +20,7 @@ export interface Props {
   children?: React.ReactNode;
   labelStyle?: React.CSSProperties;
   switchStyle?: React.CSSProperties;
+  switchCheckedStyle?: React.CSSProperties;
   switchInnerStyle?: React.CSSProperties;
   switchInnerCheckedStyle?: React.CSSProperties;
 }
@@ -28,6 +35,7 @@ export default function Switch({
   children,
   labelStyle,
   switchStyle,
+  switchCheckedStyle,
   switchInnerStyle,
   switchInnerCheckedStyle,
 }: Props): JSX.Element {
@@ -43,13 +51,14 @@ export default function Switch({
         name={name}
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
-        checkboxStyle={switchStyle}
+        checkboxStyle={{ ...SWITCH, ...switchStyle }}
       />
       { location === 'after' && children }
       <FakeSwitch
-        switchStyle={switchStyle}
-        switchInnerStyle={switchInnerStyle}
-        switchInnerCheckedStyle={switchInnerCheckedStyle}
+        switchStyle={{ ...SWITCH, ...switchStyle }}
+        switchCheckedStyle={{ ...SWITCH_CHECKED, ...switchCheckedStyle }}
+        switchInnerStyle={{ ...SWITCH_INNER_STYLE, ...switchInnerStyle }}
+        switchInnerCheckedStyle={{ ...SWITCH_INNER_CHECKED_STYLE, ...switchInnerCheckedStyle }}
       />
       { location === 'before' && children }
     </Label>
