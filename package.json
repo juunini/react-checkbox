@@ -1,8 +1,8 @@
 {
   "author": "juunini",
-  "name": "react-checkbox",
+  "name": "@juunini/react-checkbox",
   "description": "CheckBox and Radio component library for React",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "license": "MIT",
   "homepage": "https://github.com/juunini/react-checkbox",
   "keywords": [
