@@ -2,7 +2,7 @@
   "author": "juunini",
   "name": "@juunini/react-checkbox",
   "description": "CheckBox and Radio component library for React",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "license": "MIT",
   "homepage": "https://github.com/juunini/react-checkbox",
   "keywords": [
@@ -19,8 +19,9 @@
     "url": "https://github.com/juunini/react-checkbox/issues"
   },
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
   "targets": {
     "main": {
       "isLibrary": true,
