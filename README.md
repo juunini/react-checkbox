@@ -57,12 +57,12 @@ function App(): JSX.Element {
 |id|string|[randomID](./src/utils/randomID.ts)|
 |name|string|undefined|
 |location|'before' \| 'after'|'before'|
-|[wrapperStyle](#wrapperstyle-default-properties)|React.CSSProperties||
-|[checkboxWrapperStyle](#checkboxwrapperstyle-default-properties)|React.CSSProperties||
+|[labelStyle](#labelstyle-default-properties)|React.CSSProperties||
+|[divStyle](#divstyle-default-properties)|React.CSSProperties||
 |[checkboxDefaultStyle](#checkboxdefaultstyle-default-properties)|React.CSSProperties||
 |[checkboxCheckedStyle](#checkboxcheckedstyle-default-properties)|React.CSSProperties||
 
-## wrapperStyle default properties
+## labelStyle default properties
 
 ```html
 <label>
@@ -80,7 +80,7 @@ in label style.
 |justifyContent|center|
 |alignItems|center|
 
-## checkboxWrapperStyle default properties
+## divStyle default properties
 
 `<div> ::before {children} ::after </div>` div style.
 
