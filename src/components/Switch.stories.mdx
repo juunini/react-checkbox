@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { useState } from 'react';
+
+import Switch from './Switch';
+
+<Meta
+  title="Switch"
+  component={Switch}
+/>
+
+export const SwitchTemplate = (args) => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <Switch
+      {...args}
+      type="checkbox"
+      checked={checked}
+      onChange={setChecked}
+    >
+      label
+    </Switch>
+  );
+};
+
+export const RadioTemplate = (args) => {
+  const [checked1, setChecked1] = useState(false);
+  const [checked2, setChecked2] = useState(false);
+  const [checked3, setChecked3] = useState(false);
+  const [checked4, setChecked4] = useState(false);
+  return (
+    <>
+      <Switch {...args} type="radio" name="radio" checked={checked1} onChange={setChecked1}>label1</Switch>
+      <Switch {...args} type="radio" name="radio" checked={checked2} onChange={setChecked2}>label2</Switch>
+      <Switch {...args} type="radio" name="radio" checked={checked3} onChange={setChecked3}>label3</Switch>
+      <Switch {...args} type="radio" name="radio" checked={checked4} onChange={setChecked4}>label4</Switch>
+    </>
+  );
+};
+
+<Canvas>
+  <Story
+    name="checkbox"
+    args={{
+      checkboxStyle: {
+        marginRight: '5px',
+      },
+    }}
+  >
+    {SwitchTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="radio"
+    args={{
+      labelStyle: {
+        margin: '0 10px',
+      },
+      checkboxStyle: {
+        marginRight: '5px',
+      },
+    }}
+  >
+    {RadioTemplate.bind({})}
+  </Story>
+</Canvas>
