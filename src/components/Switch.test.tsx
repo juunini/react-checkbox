@@ -22,35 +22,61 @@ describe('Switch component is', () => {
     });
   });
 
-  context('When given type is "radio"', () => {
-    const givenType: 'radio' = 'radio';
+  context('When given type is "checkbox"', () => {
+    it('Should be render "checkbox" type input', () => {
+      renderSwitch({ type: 'checkbox' });
 
+      expect(screen.getByRole('checkbox')).toBeInTheDocument();
+    });
+
+    it('Should be onChange receive checked status', () => {
+      const givenChecked: boolean = false;
+      const onChange = jest.fn((checked: boolean) => expect(checked).toBe(!givenChecked));
+
+      renderSwitch({ type: 'checkbox', onChange, checked: givenChecked });
+
+      fireEvent.click(screen.getByRole('checkbox'));
+    });
+  });
+
+  context('When given type is "radio"', () => {
     it('Should be render "radio" type input', () => {
-      renderSwitch({ type: givenType });
+      renderSwitch({ type: 'radio' });
 
       expect(screen.getByRole('radio')).toBeInTheDocument();
+    });
+
+    it('Should be onChange receive value', () => {
+      const givenValue: string = 'value';
+      const onChange = jest.fn((value: string) => expect(value).toBe(givenValue));
+
+      renderSwitch({ type: 'radio', onChange, value: givenValue });
+
+      fireEvent.click(screen.getByRole('radio'));
     });
   });
 
   context('When given location is "before"', () => {
-    const givenLocation: 'before' = 'before';
+    it('Should checkbox front of children', () => {
+      const { container } = render((
+        <Switch checked={false} onChange={jest.fn()} location="before">
+          <span>aaa</span>
+        </Switch>
+      ));
 
-    it('Should be "left" is 0 and no "right"', () => {
-      renderSwitch({ location: givenLocation });
-
-      expect(screen.getByRole('checkbox')).not.toHaveStyleRule('right', '0');
-      expect(screen.getByRole('checkbox')).toHaveStyleRule('left', '0');
+      expect(container.querySelector('div')?.nextSibling?.nodeName).toBe('SPAN');
     });
   });
 
   context('When given location is "after"', () => {
-    const givenLocation: 'after' = 'after';
+    it('Should children front of checkbox', () => {
+      const { container } = render((
+        <Switch checked={false} onChange={jest.fn()} location="after">
+          <span>aaa</span>
+        </Switch>
+      ));
 
-    it('Should be no "left" and "right" is 0', () => {
-      renderSwitch({ location: givenLocation });
-
-      expect(screen.getByRole('checkbox')).toHaveStyleRule('right', '0');
-      expect(screen.getByRole('checkbox')).not.toHaveStyleRule('left', '0');
+      expect(container.querySelector('div')?.previousSibling?.nodeName).toBe('SPAN');
     });
   });
 });

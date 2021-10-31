@@ -4,7 +4,7 @@ import type { CheckBoxLocation } from './CheckBox.types';
 
 export interface Props {
   location: CheckBoxLocation;
-  checkboxStyle?: React.CSSProperties;
+  checkboxStyle: React.CSSProperties;
 }
 
 const Input = styled.input(({
@@ -17,11 +17,11 @@ const Input = styled.input(({
   zIndex: -1,
   top: 0,
   [location === 'before' ? 'left' : 'right']: 0,
-  width: checkboxStyle?.width || '1rem',
-  height: checkboxStyle?.height || '1rem',
+  width: checkboxStyle.width,
+  height: checkboxStyle.height,
   margin: 0,
   padding: 0,
-  borderRadius: checkboxStyle?.borderRadius,
+  borderRadius: checkboxStyle.borderRadius,
 }));
 
 export default Input;
