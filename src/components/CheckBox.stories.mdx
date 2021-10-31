@@ -9,16 +9,17 @@ import CheckBox from './CheckBox';
 />
 
 export const CheckBoxTemplate = (args) => {
-  const [checked, setChecked] = useState(false);
+  const [checked1, setChecked1] = useState(false);
+  const [checked2, setChecked2] = useState(false);
+  const [checked3, setChecked3] = useState(false);
+  const [checked4, setChecked4] = useState(false);
   return (
-    <CheckBox
-      {...args}
-      type="checkbox"
-      checked={checked}
-      onChange={setChecked}
-    >
-      label
-    </CheckBox>
+    <>
+      <CheckBox {...args} type="checkbox" checked={checked1} onChange={setChecked1}>label</CheckBox>
+      <CheckBox {...args} type="checkbox" checked={checked2} onChange={setChecked2}>label</CheckBox>
+      <CheckBox {...args} type="checkbox" checked={checked3} onChange={setChecked3}>label</CheckBox>
+      <CheckBox {...args} type="checkbox" checked={checked4} onChange={setChecked4}>label</CheckBox>
+    </>
   );
 };
 
@@ -41,6 +42,9 @@ export const RadioTemplate = (args) => {
   <Story
     name="checkbox"
     args={{
+      labelStyle: {
+        margin: '0 10px',
+      },
       checkboxStyle: {
         marginRight: '5px',
       },

@@ -51,13 +51,28 @@ export default function CheckBox({
         name={name}
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
+        checkboxStyle={{
+          ...CHECKBOX_STYLE,
+          borderRadius: type === 'radio' ? '50%' : 0,
+          ...checkboxStyle,
+        }}
       />
       { location === 'after' && children }
       <FakeCheckBox
-        type={type}
-        checkboxStyle={{ ...CHECKBOX_STYLE, ...checkboxStyle }}
-        checkboxCheckedStyle={{ ...CHECKBOX_CHECKED_STYLE, ...checkboxCheckedStyle }}
-        checkboxInnerStyle={{ ...CHECKBOX_INNER_STYLE, ...checkboxInnerStyle }}
+        checkboxStyle={{
+          ...CHECKBOX_STYLE,
+          borderRadius: type === 'radio' ? '50%' : 0,
+          ...checkboxStyle,
+        }}
+        checkboxCheckedStyle={{
+          ...CHECKBOX_CHECKED_STYLE,
+          ...checkboxCheckedStyle,
+        }}
+        checkboxInnerStyle={{
+          ...CHECKBOX_INNER_STYLE,
+          borderRadius: type === 'radio' ? '50%' : 0,
+          ...checkboxInnerStyle,
+        }}
         checkboxInnerCheckedStyle={{
           ...CHECKBOX_INNER_CHECKED_STYLE,
           ...checkboxInnerCheckedStyle,

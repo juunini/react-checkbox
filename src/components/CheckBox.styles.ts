@@ -4,8 +4,11 @@ export const CHECKBOX_STYLE: React.CSSProperties = {
   flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
+  width: '1.2rem',
+  height: '1.2rem',
   margin: 0,
   padding: 0,
+  border: '1px solid black',
 };
 
 export const CHECKBOX_CHECKED_STYLE: React.CSSProperties = {};
@@ -13,19 +16,18 @@ export const CHECKBOX_CHECKED_STYLE: React.CSSProperties = {};
 export const CHECKBOX_INNER_STYLE: React.CSSProperties = {
   boxSizing: 'border-box',
   content: '""',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '1rem',
-  height: '1rem',
+  display: 'block',
+  width: '0.6rem',
+  height: '0.6rem',
+  maxWidth: 0,
+  maxHeight: 0,
   margin: 0,
   padding: 0,
-  fontSize: '1rem',
-  backgroundColor: 'white',
-  border: '3px solid white',
-  outline: '1px inset black',
+  backgroundColor: 'black',
+  transition: '0.2s',
 };
 
 export const CHECKBOX_INNER_CHECKED_STYLE: React.CSSProperties = {
-  backgroundColor: 'black',
+  maxWidth: '0.6rem',
+  maxHeight: '0.6rem',
 };
