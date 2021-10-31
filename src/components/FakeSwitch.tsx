@@ -7,11 +7,11 @@ const SWITCH: React.CSSProperties = {
   flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '55px',
-  height: '30px',
+  width: '3.4rem',
+  height: '1.8rem',
   margin: 0,
   padding: 0,
-  borderRadius: '20px',
+  borderRadius: '1.2rem',
   backgroundColor: '#CCCCCC',
   boxShadow: 'inset 1px 5px 1px #999999',
   transition: '0.5s',
@@ -24,13 +24,13 @@ const SWITCH_INNER_STYLE: React.CSSProperties = {
   boxSizing: 'border-box',
   content: '""',
   position: 'absolute',
-  left: '4px',
-  bottom: '4px',
+  left: '0.2rem',
+  bottom: '0.2rem',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '22px',
-  height: '22px',
+  width: '1.5rem',
+  height: '1.5rem',
   margin: 0,
   padding: 0,
   backgroundColor: 'white',
@@ -38,7 +38,7 @@ const SWITCH_INNER_STYLE: React.CSSProperties = {
   transition: '0.5s',
 };
 const SWITCH_INNER_CHECKED_STYLE: React.CSSProperties = {
-  transform: 'translateX(26px)',
+  transform: 'translateX(1.5rem)',
 };
 
 export interface Props {
