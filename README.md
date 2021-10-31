@@ -15,7 +15,7 @@ Using checkbox
 
 ```tsx
 import { useState } from 'react';
-import { CheckBox/* or Switch */ } from 'react-checkbox';
+import { CheckBox/* or Switch */ } from '@juunini/react-checkbox';
 
 function App(): JSX.Element {
   const [checked, setChecked] = useState<boolean>(false);
@@ -35,7 +35,7 @@ Using radio
 
 ```tsx
 import { useState } from 'react';
-import { CheckBox/* or Switch */ } from 'react-checkbox';
+import { CheckBox/* or Switch */ } from '@juunini/react-checkbox';
 
 function App(): JSX.Element {
   const [value, setValue] = useState<string>('');
