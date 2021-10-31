@@ -2,7 +2,7 @@
   "author": "juunini",
   "name": "react-checkbox",
   "description": "CheckBox and Radio component library for React",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "license": "MIT",
   "homepage": "https://github.com/juunini/react-checkbox",
   "keywords": [
@@ -46,6 +46,8 @@
     "@babel/preset-typescript": "^7.16.0",
     "@emotion/jest": "^11.5.0",
     "@mdx-js/react": "^1.6.22",
+    "@parcel/packager-ts": "^2.0.0",
+    "@parcel/transformer-typescript-types": "^2.0.0",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-docs": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",

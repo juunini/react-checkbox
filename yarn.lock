@@ -2746,6 +2746,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/packager-ts@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@parcel/packager-ts@npm:2.0.0"
+  dependencies:
+    "@parcel/plugin": ^2.0.0
+  checksum: 562e67307fa64f7b04d2f1c9bd501174aa6c54fcf83fb671a2a426f337dcb6752bc0d84b8e7aa6b189915fe209791331d0e4fe49d7295d284fc97554ea46b13b
+  languageName: node
+  linkType: hard
+
 "@parcel/plugin@npm:^2.0.0":
   version: 2.0.0
   resolution: "@parcel/plugin@npm:2.0.0"
@@ -3010,6 +3019,31 @@ __metadata:
     posthtml-render: ^3.0.0
     semver: ^5.4.1
   checksum: c23bdc00caee3149d1cada02ec72524f6b3328a881d5943cb833c242f6f85f8e7a91a528744ea84b02d5074d0f814d394bf6a24bbc5baf1aa0d18fe507fae636
+  languageName: node
+  linkType: hard
+
+"@parcel/transformer-typescript-types@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@parcel/transformer-typescript-types@npm:2.0.0"
+  dependencies:
+    "@parcel/plugin": ^2.0.0
+    "@parcel/source-map": ^2.0.0
+    "@parcel/ts-utils": ^2.0.0
+    nullthrows: ^1.1.1
+  peerDependencies:
+    typescript: ">=3.0.0"
+  checksum: 58242bf7ab11e85bc1b3c0613d2275e8fa5a3e98096f85ec9e161717ccad75d8951d8c5d45442e653af9d042e880d45b226e41aab9861a02abbdec999c5a2505
+  languageName: node
+  linkType: hard
+
+"@parcel/ts-utils@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@parcel/ts-utils@npm:2.0.0"
+  dependencies:
+    nullthrows: ^1.1.1
+  peerDependencies:
+    typescript: ">=3.0.0"
+  checksum: 3bf611267b90b6e505221c5d7d912e4fcd0dca8275647caca6bf22c8293ae8d34108417ac1301195b87624fa9418b6afa1d6ea1bfa233fe90301c67f80a29537
   languageName: node
   linkType: hard
 
@@ -15774,6 +15808,8 @@ __metadata:
     "@emotion/react": ^11.5.0
     "@emotion/styled": ^11.3.0
     "@mdx-js/react": ^1.6.22
+    "@parcel/packager-ts": ^2.0.0
+    "@parcel/transformer-typescript-types": ^2.0.0
     "@storybook/addon-actions": ^6.3.12
     "@storybook/addon-docs": ^6.3.12
     "@storybook/addon-essentials": ^6.3.12

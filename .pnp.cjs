@@ -43,6 +43,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/react", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:11.5.0"],
             ["@emotion/styled", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:11.3.0"],
             ["@mdx-js/react", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:1.6.22"],
+            ["@parcel/packager-ts", "npm:2.0.0"],
+            ["@parcel/transformer-typescript-types", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:2.0.0"],
             ["@storybook/addon-actions", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:6.3.12"],
             ["@storybook/addon-docs", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:6.3.12"],
             ["@storybook/addon-essentials", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:6.3.12"],
@@ -6843,6 +6845,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@parcel/packager-ts", [
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/@parcel-packager-ts-npm-2.0.0-5436400c58-562e67307f.zip/node_modules/@parcel/packager-ts/",
+          "packageDependencies": [
+            ["@parcel/packager-ts", "npm:2.0.0"],
+            ["@parcel/plugin", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@parcel/plugin", [
         ["npm:2.0.0", {
           "packageLocation": "./.yarn/cache/@parcel-plugin-npm-2.0.0-e4a4000db0-a123b51795.zip/node_modules/@parcel/plugin/",
@@ -7126,6 +7138,55 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["posthtml-parser", "npm:0.10.1"],
             ["posthtml-render", "npm:3.0.0"],
             ["semver", "npm:5.7.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@parcel/transformer-typescript-types", [
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/@parcel-transformer-typescript-types-npm-2.0.0-713a2306e7-58242bf7ab.zip/node_modules/@parcel/transformer-typescript-types/",
+          "packageDependencies": [
+            ["@parcel/transformer-typescript-types", "npm:2.0.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:2.0.0", {
+          "packageLocation": "./.yarn/__virtual__/@parcel-transformer-typescript-types-virtual-d513d283af/0/cache/@parcel-transformer-typescript-types-npm-2.0.0-713a2306e7-58242bf7ab.zip/node_modules/@parcel/transformer-typescript-types/",
+          "packageDependencies": [
+            ["@parcel/transformer-typescript-types", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:2.0.0"],
+            ["@parcel/plugin", "npm:2.0.0"],
+            ["@parcel/source-map", "npm:2.0.0"],
+            ["@parcel/ts-utils", "virtual:d513d283af5ac38a1bf8b4143db863fa5e672562cb57769ca08cb85fe33cded465314cbf3502a4cfce0a7e82797f8487f62ce4540b55f7a1111876a795c5a160#npm:2.0.0"],
+            ["@types/typescript", null],
+            ["nullthrows", "npm:1.1.1"],
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
+          ],
+          "packagePeers": [
+            "@types/typescript",
+            "typescript"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@parcel/ts-utils", [
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/@parcel-ts-utils-npm-2.0.0-6c112a426a-3bf611267b.zip/node_modules/@parcel/ts-utils/",
+          "packageDependencies": [
+            ["@parcel/ts-utils", "npm:2.0.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:d513d283af5ac38a1bf8b4143db863fa5e672562cb57769ca08cb85fe33cded465314cbf3502a4cfce0a7e82797f8487f62ce4540b55f7a1111876a795c5a160#npm:2.0.0", {
+          "packageLocation": "./.yarn/__virtual__/@parcel-ts-utils-virtual-8abdacbe99/0/cache/@parcel-ts-utils-npm-2.0.0-6c112a426a-3bf611267b.zip/node_modules/@parcel/ts-utils/",
+          "packageDependencies": [
+            ["@parcel/ts-utils", "virtual:d513d283af5ac38a1bf8b4143db863fa5e672562cb57769ca08cb85fe33cded465314cbf3502a4cfce0a7e82797f8487f62ce4540b55f7a1111876a795c5a160#npm:2.0.0"],
+            ["@types/typescript", null],
+            ["nullthrows", "npm:1.1.1"],
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"]
+          ],
+          "packagePeers": [
+            "@types/typescript",
+            "typescript"
           ],
           "linkType": "HARD",
         }]
@@ -23399,6 +23460,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/react", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:11.5.0"],
             ["@emotion/styled", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:11.3.0"],
             ["@mdx-js/react", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:1.6.22"],
+            ["@parcel/packager-ts", "npm:2.0.0"],
+            ["@parcel/transformer-typescript-types", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:2.0.0"],
             ["@storybook/addon-actions", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:6.3.12"],
             ["@storybook/addon-docs", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:6.3.12"],
             ["@storybook/addon-essentials", "virtual:c53eb2761e2831b6e53e9d8b5727d1919c93d097ef9c40c36ca8d32e1c3a9cda97cfb3bd5d929a285cad97cd1376846220e81c34f293aa3776a01accbd3d4470#npm:6.3.12"],

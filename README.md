@@ -5,6 +5,10 @@
 ![Emotion](https://img.shields.io/badge/Emotion-CC6699?style=for-the-badge&logo=emotion&logoColor=white)
 ![Parcel](https://img.shields.io/badge/📦_Parcel-334155?style=for-the-badge&logo=emotion&logoColor=white)
 
+## Caution
+
+This package is test version now.
+
 ## Usage
 
 Using checkbox
