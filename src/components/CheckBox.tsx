@@ -1,6 +1,6 @@
 import type { CheckBoxLocation, CheckBoxType } from './CheckBox.types';
 import randomID from '../utils/randomID';
-import Label from './Wrapper';
+import Label from './Label';
 import Input from './Input';
 import FakeCheckBox from './FakeCheckBox';
 
@@ -14,7 +14,7 @@ export interface Props {
   children?: React.ReactNode;
   labelStyle?: React.CSSProperties;
   divStyle?: React.CSSProperties;
-  checkboxDefaultStyle?: React.CSSProperties;
+  checkboxStyle?: React.CSSProperties;
   checkboxCheckedStyle?: React.CSSProperties;
 }
 
@@ -24,11 +24,11 @@ export default function CheckBox({
   type = 'checkbox',
   id = randomID(),
   name,
-  location,
+  location = 'before',
   children,
   labelStyle,
   divStyle,
-  checkboxDefaultStyle,
+  checkboxStyle,
   checkboxCheckedStyle,
 }: Props): JSX.Element {
   return (
@@ -38,6 +38,7 @@ export default function CheckBox({
     >
       <Input
         type={type}
+        location={location}
         id={id}
         name={name}
         checked={checked}
@@ -45,9 +46,10 @@ export default function CheckBox({
       />
 
       <FakeCheckBox
+        type={type}
         location={location}
         divStyle={divStyle}
-        checkboxDefaultStyle={checkboxDefaultStyle}
+        checkboxStyle={checkboxStyle}
         checkboxCheckedStyle={checkboxCheckedStyle}
       >
         {children}

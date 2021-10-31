@@ -59,7 +59,7 @@ function App(): JSX.Element {
 |location|'before' \| 'after'|'before'|
 |[labelStyle](#labelstyle-default-properties)|React.CSSProperties||
 |[divStyle](#divstyle-default-properties)|React.CSSProperties||
-|[checkboxDefaultStyle](#checkboxdefaultstyle-default-properties)|React.CSSProperties||
+|[checkboxStyle](#checkboxstyle-default-properties)|React.CSSProperties||
 |[checkboxCheckedStyle](#checkboxcheckedstyle-default-properties)|React.CSSProperties||
 
 ## labelStyle default properties
@@ -75,10 +75,15 @@ in label style.
 
 |name|default|
 |:-|:-|
+|boxSizing|border-box|
+|position|relative|
 |display|inline-flex|
 |flexDirection|row|
 |justifyContent|center|
 |alignItems|center|
+|margin|0|
+|padding|0|
+|verticalAlign|top|
 
 ## divStyle default properties
 
@@ -86,25 +91,34 @@ in label style.
 
 |name|default|
 |:-|:-|
+|boxSizing|border-box|
 |display|flex|
 |flexDirection|row|
 |justifyContent|center|
 |alignItems|center|
+|margin|0|
+|padding|0|
 
-## checkboxDefaultStyle default properties
+## checkboxStyle default properties
 
 This using in `input ~ div::before` or `input ~ div::after` pseudo class style.
 
 |name|default|
 |:-|:-|
+|boxSizing|border-box|
 |content|""|
 |display|flex|
 |justifyContent|center|
 |alignItems|center|
 |width|1rem|
 |height|1rem|
+|margin|0|
+|padding|0|
 |fontSize|1rem|
-|border|1px solid black|
+|backgroundColor|white|
+|border|3px solid white|
+|borderRadius|type === radio ? 50% : 0|
+|outline|1px inset black|
 
 ## checkboxCheckedStyle default properties
 
@@ -112,4 +126,4 @@ This using in `input:checked ~ div::before` or `input:checked ~ div::after` pseu
 
 |name|default|
 |:-|:-|
-|content|✔️|
+|backgroundColor|black|
