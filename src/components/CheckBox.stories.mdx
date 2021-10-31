@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { useState } from 'react';
+
+import CheckBox from './CheckBox';
+
+<Meta
+  title="CheckBox"
+  component={CheckBox}
+/>
+
+export const CheckBoxTemplate = (args) => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <CheckBox
+      {...args}
+      type="checkbox"
+      checked={checked}
+      onChange={setChecked}
+    >
+      label
+    </CheckBox>
+  );
+};
+
+export const RadioTemplate = (args) => {
+  const [checked1, setChecked1] = useState(false);
+  const [checked2, setChecked2] = useState(false);
+  const [checked3, setChecked3] = useState(false);
+  const [checked4, setChecked4] = useState(false);
+  return (
+    <>
+      <CheckBox {...args} type="radio" name="radio" checked={checked1} onChange={setChecked1}>label1</CheckBox>
+      <CheckBox {...args} type="radio" name="radio" checked={checked2} onChange={setChecked2}>label2</CheckBox>
+      <CheckBox {...args} type="radio" name="radio" checked={checked3} onChange={setChecked3}>label3</CheckBox>
+      <CheckBox {...args} type="radio" name="radio" checked={checked4} onChange={setChecked4}>label4</CheckBox>
+    </>
+  );
+};
+
+<Canvas>
+  <Story
+    name="checkbox"
+    args={{}}
+  >
+    {CheckBoxTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="radio"
+    args={{
+      divStyle: {
+        margin: '0 10px',
+      },
+      checkboxStyle: {
+        marginRight: '5px',
+      },
+    }}
+  >
+    {RadioTemplate.bind({})}
+  </Story>
+</Canvas>
