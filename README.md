@@ -67,7 +67,8 @@ function App(): JSX.Element {
 ```html
 <label>
   <input />
-  <div>{children}</div>
+  <div />
+  {children}
 </label>
 ```
 
@@ -84,20 +85,6 @@ in label style.
 |margin|0|
 |padding|0|
 |verticalAlign|top|
-
-## divStyle default properties
-
-`<div> ::before {children} ::after </div>` div style.
-
-|name|default|
-|:-|:-|
-|boxSizing|border-box|
-|display|flex|
-|flexDirection|row|
-|justifyContent|center|
-|alignItems|center|
-|margin|0|
-|padding|0|
 
 ## checkboxStyle default properties
 

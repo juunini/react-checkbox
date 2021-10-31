@@ -40,7 +40,11 @@ export const RadioTemplate = (args) => {
 <Canvas>
   <Story
     name="checkbox"
-    args={{}}
+    args={{
+      checkboxStyle: {
+        marginRight: '5px',
+      },
+    }}
   >
     {CheckBoxTemplate.bind({})}
   </Story>
@@ -50,7 +54,7 @@ export const RadioTemplate = (args) => {
   <Story
     name="radio"
     args={{
-      divStyle: {
+      labelStyle: {
         margin: '0 10px',
       },
       checkboxStyle: {

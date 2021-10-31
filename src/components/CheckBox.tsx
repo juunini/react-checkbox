@@ -13,7 +13,6 @@ export interface Props {
   location?: CheckBoxLocation;
   children?: React.ReactNode;
   labelStyle?: React.CSSProperties;
-  divStyle?: React.CSSProperties;
   checkboxStyle?: React.CSSProperties;
   checkboxCheckedStyle?: React.CSSProperties;
 }
@@ -27,7 +26,6 @@ export default function CheckBox({
   location = 'before',
   children,
   labelStyle,
-  divStyle,
   checkboxStyle,
   checkboxCheckedStyle,
 }: Props): JSX.Element {
@@ -44,16 +42,13 @@ export default function CheckBox({
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}
       />
-
       <FakeCheckBox
         type={type}
         location={location}
-        divStyle={divStyle}
         checkboxStyle={checkboxStyle}
         checkboxCheckedStyle={checkboxCheckedStyle}
-      >
-        {children}
-      </FakeCheckBox>
+      />
+      {children}
     </Label>
   );
 }
